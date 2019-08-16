@@ -26,12 +26,12 @@ public class IntroduccionJDBC {
             // Creamos un objeto de tipo Statement
             Statement instruccion = conexion.createStatement();
             // Creamos el query
-            String sql = "SELECT id_persona, nombre, apellido FROM persona";
+            String sql = "SELECT idpersona, nombre, apellido FROM persona";
             ResultSet result = instruccion.executeQuery(sql);
             while (result.next()) {
-                System.out.print("Id" + result.getInt(1));
-                System.out.println("Nombre" + result.getString(2));
-                System.out.println("Apellido" + result.getString(3));
+                System.out.print("Id:" + result.getInt(1) + "\t");
+                System.out.println("Nombre: " + result.getString(2));
+                System.out.println("Apellido: " + result.getString(3));
             }  
             result.close();
             instruccion.close();
